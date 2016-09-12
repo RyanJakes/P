@@ -89,7 +89,11 @@ html, body {
   width: 300px;
   height: 300px;
   border-radius: 100%;
+<<<<<<< HEAD
   background: url("../assets/images/photo.jpg") no-repeat;
+=======
+  background: url("../images/photo.jpg") no-repeat;
+>>>>>>> refs/remotes/origin/master
   background-position: center;
   background-size: contain;
   margin-bottom: 50px;
