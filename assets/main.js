@@ -1,82 +1,83 @@
 //background inspired by stripe.com
 
 $("#email").click(function() {
-    $("#changer").fadeOut("slow", function() {
-        $("#changer").text("ryan@forcir.ca");
-        $("#changer").fadeIn("fast");
-    })
+	$("#changer").fadeOut("slow", function () {
+		$("#changer").text("ryan@forcir.ca");
+			$("#changer").fadeIn("fast");
+	})
 });
 
 $("#phone").click(function() {
-    $("#changer").fadeOut("slow", function() {
-        $("#changer").text("250-938-1534");
-        $("#changer").fadeIn("fast");
-    })
+	$("#changer").fadeOut("slow", function () {
+		$("#changer").text("250-938-1534");
+			$("#changer").fadeIn("fast");
+	})
 });
 
 $("#photo").click(function() {
-    $(".cards").slideToggle();
+	$(".cards").slideToggle();
 });
-(function() {
-    var words = [
-            'Student',
-            'Designer',
-            'Tech Guru',
-            'Developer',
-            'Skier',
-            'Teacher',
-            'Teddy Bear'
-        ],
-        i = 0;
-    setInterval(function() {
-        $('#changingword').fadeOut(function() {
-            $(this).html(words[i = (i + 1) % words.length]).fadeIn();
-        });
-    }, 6000);
+(function(){
+      var words = [
+          'Student',
+          'Designer',
+          'Tech Guru',
+          'Developer',
+          'Guy',
+          'Teacher',
+          'Teddy Bear'
+          ], i = 0;
+      setInterval(function(){
+          $('#changingword').fadeOut(function(){
+              $(this).html(words[i=(i+1)%words.length]).fadeIn();
+          });
+      }, 3000);
 
-})();
+  })();
 
-$(".card-toggle").on("click", function() {
 
-    // Card toggle state 	
-    $(".card-toggle").removeClass("active");
-    $(this).addClass("active");
 
-    var isAnimating = false;
+$(".card-toggle").on("click", function(){
 
-    if (!isAnimating) {
-        isAnimating = true;
+	// Card toggle state
+	$(".card-toggle").removeClass("active");
+	$(this).addClass("active");
 
-        $(".card").find(".card-content").css("z-index", 0);
-        $(".card").removeClass("active");
+	var isAnimating = false;
 
-        var that = $(this);
+	if( !isAnimating ){
+		isAnimating = true;
 
-        $(this).siblings().css("z-index", 1);
+		$(".card").find(".card-content").css("z-index",0);
+		$(".card").removeClass("active");
 
-        setTimeout(function() {
-            that.parent().toggleClass("active").find(".card-content").on("transitionend", function() {
-                isAnimating = false;
-            });;
+		var that = $(this);
 
-        }, 10);
-    } else {
-        return;
-    }
-});
+		$(this).siblings().css("z-index",1);
 
-$("input,textarea").blur(function() {
-    if ($(this).val()) {
-        $(this).parent().addClass("filled");
-    } else {
-        $(this).parent().removeClass("filled");
-    }
+		setTimeout(function(){
+			that.parent().toggleClass("active").find(".card-content").on("transitionend", function(){
+				isAnimating = false;
+			});	;
+
+		},10);
+	} else {
+		return;
+	}
 });
 
-$(".contact").on("click", function() {
-    $(".contact-form").toggleClass("active");
+$("input,textarea").blur(function(){
+	if( $(this).val() ){
+		$(this).parent().addClass("filled");
+	} else {
+		$(this).parent().removeClass("filled");
+	}
 });
-$(".contact-form input[type=submit], .contact-form .close").on("click", function(e) {
-    e.preventDefault();
-    $(".contact-form").toggleClass("active")
+
+$(".contact").on("click",function(){
+	$(".contact-form").toggleClass("active");
+});
+$(".contact-form input[type=submit], .contact-form .close").on("click",function(e){
+	e.preventDefault();
+	$(".contact-form").toggleClass("active")
 });
