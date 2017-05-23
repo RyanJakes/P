@@ -1,0 +1,91 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+$primary: rgba(52,73,94 ,1);
+$primary-dark: rgba(44,62,80 ,1);
+$secondary: rgba(46, 204, 113,1.0);
+$secondary-light: rgba(52,152,219 ,.8);
+$text: #fff;
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100,400,700');
+
+body, html {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    color: $text;
+}
+
+.content {
+    background: $primary;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 65vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        min-height: 80px;
+    }
+    & :not(:first-child):not(:last-child) {
+        margin: 0 2vw;
+    }
+    & a.item {
+        color: #fff;
+        text-decoration: none;
+        transition: 200ms;
+        padding: 5px 0;
+        text-align: center;
+        text-transform: lowercase;
+        width: 100%;
+        min-height: 20px;
+        border-radius: 2px;
+        border: 1px solid rgba(255,255,255,.3);
+        box-shadow: 4px 8px 10px rgba(0,0,0,.0), inset 0 0 0 $secondary;
+        &.active {
+            border-color: $secondary;
+        }
+        &:hover {
+            border-color: rgba(255,255,255,0);
+            box-shadow: 4px 8px 10px rgba(0,0,0,.1), inset 0 -2px 0 $secondary;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 600px) {
+            margin: 3px 0;
+        }
+    }
+}
+
+.information {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.display {
+    display: flex;
+    justify-content: space-around;
+    .contact {
+        font-size: 20px;
+    }
+    .skill ul {
+        list-style-type: none;
+        & li {
+            
+        }
+    }
+}
